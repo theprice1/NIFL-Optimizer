@@ -31,7 +31,23 @@ st.sidebar.header("⚙️ Optimizer Settings")
 
 # Feature: Custom Projections Upload
 st.sidebar.subheader("1. Projections File")
-st.sidebar.markdown("Upload a CSV with `name` and `projected_points` columns.")
+
+# Clickable instructions dropdown
+with st.sidebar.expander("ℹ️ How to format your CSV"):
+    st.markdown("""
+    Your file must be a `.csv` with exactly two column headers:
+    1. `name` (Must match the database exactly)
+    2. `projected_points` (Numbers only)
+    
+    **Example:**
+    ```csv
+    name,projected_points
+    Joe Gormley,12.5
+    Jordan Stewart,8.0
+    ```
+    *Note: You only need to include the players you want to change. Anyone missing from your file will automatically use the default points.*
+    """)
+
 uploaded_file = st.sidebar.file_uploader("Upload Projections", type=['csv'])
 
 if uploaded_file is not None:
