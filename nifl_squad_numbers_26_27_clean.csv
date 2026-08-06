@@ -1,0 +1,316 @@
+team,squad_number,name
+Larne FC,1,Rohan Ferguson
+Larne FC,16,Jacob Carney
+Larne FC,36,Dylan Graham
+Larne FC,31,Dan Collett
+Larne FC,3,Matt Ridley
+Larne FC,4,Aaron Donnelly
+Larne FC,5,Sam McClelland
+Larne FC,46,Logan Wallace
+Larne FC,11,Sean Graham
+Larne FC,47,James Simpson
+Larne FC,23,Tomas Cosgrove
+Larne FC,6,Chris Gallagher
+Larne FC,26,Dan Bent
+Larne FC,22,Jordan McEneff
+Larne FC,15,Ronan Doherty
+Larne FC,21,Leroy Millar
+Larne FC,8,Mark Randall
+Larne FC,25,Dylan Sloan
+Larne FC,17,Josh Ukek
+Larne FC,7,Conor McKendry
+Larne FC,10,Tiarnan O'Connor
+Larne FC,9,Paul O'Neill
+Larne FC,14,Benji Magee
+Larne FC,30,Matthew Lusty
+Larne FC,19,Kevin O'Hara
+Larne FC,45,Montel Gibson
+Coleraine FC,1,Ryan Schofield
+Coleraine FC,12,Lewis Webb
+Coleraine FC,5,Cameron Stewart
+Coleraine FC,6,Kodi Lyons-Foster
+Coleraine FC,16,Aidan Wilson
+Coleraine FC,15,Levi Ives
+Coleraine FC,23,Ben Doherty
+Coleraine FC,3,Dean Jarvis
+Coleraine FC,2,Lyndon Kane
+Coleraine FC,26,Conrad Hunt
+Coleraine FC,4,Dylan Boyle
+Coleraine FC,21,Rowan McDonald
+Coleraine FC,8,Will Patching
+Coleraine FC,14,Mark Coyle
+Coleraine FC,20,Senan Devine
+Coleraine FC,22,Ben Wylie
+Coleraine FC,28,Oli Devlin
+Coleraine FC,11,Joel Cooper
+Coleraine FC,10,Connor Murray
+Coleraine FC,7,Lewis McGregor
+Coleraine FC,17,Jay Henderson
+Coleraine FC,24,Conor McMenamin
+Coleraine FC,9,Matthew Shevlin
+Coleraine FC,25,James Akintunde
+Glentoran FC,1,Andrew Mills
+Glentoran FC,31,Billy Crellin
+Glentoran FC,4,Zeno Ibsen Rossi
+Glentoran FC,20,Daniel Larmour
+Glentoran FC,24,Owen O'Neill
+Glentoran FC,27,James Singleton
+Glentoran FC,26,Jarlath O'Rourke
+Glentoran FC,3,Marcus Kane
+Glentoran FC,41,Ciaran Rogers-Duffy
+Glentoran FC,2,Ryan Cooney
+Glentoran FC,44,James Douglas
+Glentoran FC,38,Jack Faloona
+Glentoran FC,8,Aaron McEneff
+Glentoran FC,6,Joe Thomson
+Glentoran FC,5,Josh Kelly
+Glentoran FC,12,Greg Sloggett
+Glentoran FC,17,Liam Burt
+Glentoran FC,10,Jordan Stewart
+Glentoran FC,29,Jack Malone
+Glentoran FC,21,Charlie Lindsay
+Glentoran FC,23,Rhys Walsh
+Glentoran FC,11,Joshua Daniels
+Glentoran FC,7,Ross Clarke
+Glentoran FC,47,Casey Smyth
+Glentoran FC,30,Jordan Jenkins
+Glentoran FC,9,Pat Hoban
+Glentoran FC,25,Ben Gallagher
+Glentoran FC,14,Nathaniel Ferris
+Glentoran FC,35,Cal Weatherup
+Dungannon Swifts FC,1,Declan Dunne
+Dungannon Swifts FC,12,Alex Henderson
+Dungannon Swifts FC,31,Dylan Glass
+Dungannon Swifts FC,17,Cahal McGinty
+Dungannon Swifts FC,23,Danny Wallace
+Dungannon Swifts FC,5,Barney McKeown
+Dungannon Swifts FC,4,Peter Maguire
+Dungannon Swifts FC,3,John Scott
+Dungannon Swifts FC,14,Adam Glenny
+Dungannon Swifts FC,2,Steven Scott
+Dungannon Swifts FC,6,Tiernan Kelly
+Dungannon Swifts FC,34,Gaël Bigirimana
+Dungannon Swifts FC,10,Kealan Dillon
+Dungannon Swifts FC,16,Shea Gordon
+Dungannon Swifts FC,21,Paul Doyle
+Dungannon Swifts FC,15,Kris Lowe
+Dungannon Swifts FC,8,Jamie Glackin
+Dungannon Swifts FC,22,Bobby McAleese
+Dungannon Swifts FC,22,Michael McElhatton
+Dungannon Swifts FC,37,Corey Smith
+Dungannon Swifts FC,21,Darragh McBrien
+Dungannon Swifts FC,22,Aidan Hegarty
+Dungannon Swifts FC,13,Leo Alves
+Dungannon Swifts FC,67,Sean McAllister
+Dungannon Swifts FC,26,Andy Mitchell
+Dungannon Swifts FC,27,Sam Anderson
+Linfield FC,1,Chris Johns
+Linfield FC,18,Aidan Glavin
+Linfield FC,2,Ben Hall
+Linfield FC,4,Ryan Nolan
+Linfield FC,33,Darragh Leahy
+Linfield FC,17,Dane McCullough
+Linfield FC,27,Ethan McGee
+Linfield FC,24,Sean Brown
+Linfield FC,5,Chris Shields
+Linfield FC,8,Kyle McClean
+Linfield FC,26,Isaac Baird
+Linfield FC,22,Jamie Mulgrew
+Linfield FC,7,Kirk Millar
+Linfield FC,10,Adam Frizzell
+Linfield FC,16,Dylan Wells
+Linfield FC,29,Matthew Fitzpatrick
+Linfield FC,9,Kieran Offord
+Linfield FC,20,Kobei Moore
+Linfield FC,36,Rhys Annett
+Linfield FC,23,Charlie Chapman
+Ballymena United FC,1,David Walsh
+Ballymena United FC,23,Declan Breen
+Ballymena United FC,30,Kyle Chivers
+Ballymena United FC,4,Jonny Addis
+Ballymena United FC,15,Daithí McCallion
+Ballymena United FC,5,Scot Whiteside
+Ballymena United FC,19,Shane McEleney
+Ballymena United FC,32,Conor Burns
+Ballymena United FC,33,Jake Hirthe
+Ballymena United FC,16,Matthew Clarke
+Ballymena United FC,3,Micheál Glynn
+Ballymena United FC,2,David Toure
+Ballymena United FC,6,Fuad Sule
+Ballymena United FC,21,James Hood
+Ballymena United FC,12,Donal Rocks
+Ballymena United FC,28,Tom Duffin
+Ballymena United FC,8,Josh Archer
+Ballymena United FC,10,Charlie Allen
+Ballymena United FC,18,Sean Murray
+Ballymena United FC,20,Stephen Fallon
+Ballymena United FC,29,Owen Mahoney
+Ballymena United FC,14,Andy Scott
+Ballymena United FC,11,Ben Kennedy
+Ballymena United FC,24,Caoimhin McConnell
+Ballymena United FC,17,Michael Leetch
+Ballymena United FC,31,Alex Houston
+Ballymena United FC,22,Success Edogun
+Ballymena United FC,7,Chris McKee
+Ballymena United FC,9,Igor Rutkowski
+Cliftonville FC,31,PJ Morrison
+Cliftonville FC,1,Lewis Ridd
+Cliftonville FC,35,Matthew Belshaw
+Cliftonville FC,25,Alex Bannon
+Cliftonville FC,12,Shaun Leppard
+Cliftonville FC,24,Aidan Kelly
+Cliftonville FC,15,Kyle McClelland
+Cliftonville FC,4,Dan O'Connor
+Cliftonville FC,17,Joel Thompson
+Cliftonville FC,14,Luke Conlan
+Cliftonville FC,3,Ollie Samuels
+Cliftonville FC,33,Sean Cassidy
+Cliftonville FC,2,Aaron Wightman
+Cliftonville FC,34,Paul Stanfield
+Cliftonville FC,40,David Green
+Cliftonville FC,6,Harry Wilson
+Cliftonville FC,16,Dean McMaster
+Cliftonville FC,41,Joe Sheridan
+Cliftonville FC,42,Adebayo Fapetu
+Cliftonville FC,8,Rory Hale
+Cliftonville FC,38,Alfie Anderson
+Cliftonville FC,36,Keevan Hawthorne
+Cliftonville FC,27,Liam McStravick
+Cliftonville FC,7,Rhyss Campbell
+Cliftonville FC,20,Ben Quinn
+Cliftonville FC,43,Cillian Murray
+Cliftonville FC,10,Brian Healy
+Cliftonville FC,19,Joe Gormley
+Cliftonville FC,9,Ryan Curran
+Cliftonville FC,32,Eric McWoods
+Cliftonville FC,37,Ryan Corrigan
+Bangor FC,1,Gareth Deane
+Bangor FC,13,Patrick Solis Grogan
+Bangor FC,27,Lawton McMahon
+Bangor FC,17,Harry Lynch
+Bangor FC,28,Stephen McGuinness
+Bangor FC,19,Lewis Francis
+Bangor FC,35,Alfie Mitchell
+Bangor FC,3,Reece Neale
+Bangor FC,29,Iestyn Hughes
+Bangor FC,2,Caomhan McGuinness
+Bangor FC,8,Tiernan Mulvenna
+Bangor FC,24,Oisin Devlin
+Bangor FC,22,Ross Ferguson
+Bangor FC,7,Liam Hassin
+Bangor FC,15,Jack O'Mahony
+Bangor FC,6,Lewis Harrison
+Bangor FC,30,Liam Burns
+Bangor FC,9,Ben Arthurs
+Bangor FC,10,Ben Cushnie
+Bangor FC,25,Mick Morgan
+Bangor FC,21,Jay Boyd
+Bangor FC,34,Blake Matier
+Carrick Rangers FC,1,Nathan Gartside
+Carrick Rangers FC,13,Scott Pengelly
+Carrick Rangers FC,30,Caleb Hawthorne
+Carrick Rangers FC,12,Luke McCullough
+Carrick Rangers FC,6,Jimmy Callacher
+Carrick Rangers FC,5,Cian O'Malley
+Carrick Rangers FC,15,Ben Buchanan-Rolleston
+Carrick Rangers FC,2,Mikey Place
+Carrick Rangers FC,4,Billy Joe Burns
+Carrick Rangers FC,14,Aidan Steele
+Carrick Rangers FC,19,Joe Crowe
+Carrick Rangers FC,5,Jordan Forsythe
+Carrick Rangers FC,24,Matthew Snoddy
+Carrick Rangers FC,20,Kyle Cherry
+Carrick Rangers FC,8,Seanan Clucas
+Carrick Rangers FC,22,Paul Heatley
+Carrick Rangers FC,7,Daire O'Connor
+Carrick Rangers FC,17,Joe Moore
+Carrick Rangers FC,9,Danny Gibson
+Carrick Rangers FC,11,Nedas Maciulaitis
+Carrick Rangers FC,10,Adam Lecky
+Carrick Rangers FC,23,Jack Hastings
+Portadown FC,1,Aaron McCarey
+Portadown FC,40,Alex Moore
+Portadown FC,5,Lewis MacKinnon
+Portadown FC,4,Baris Altintop
+Portadown FC,18,Aaron Traynor
+Portadown FC,7,Lee Chapman
+Portadown FC,2,Divin Isamala
+Portadown FC,22,Jack Scott
+Portadown FC,6,Luke Wilson
+Portadown FC,21,Rabby Tabu Minzamba
+Portadown FC,26,Gary Thompson
+Portadown FC,35,Joe McKay
+Portadown FC,28,Adhamh Towe
+Portadown FC,36,Damian Traczykowski
+Portadown FC,19,James Teelan
+Portadown FC,77,Rayhaan Tulloch
+Portadown FC,13,Eamon Fyfe
+Portadown FC,20,Ahu Obhakhan
+Crusaders FC,31,Rian Brown
+Crusaders FC,1,Shea Callister
+Crusaders FC,43,Lewis Barr
+Crusaders FC,4,Jacob Blaney
+Crusaders FC,5,Scot Rough
+Crusaders FC,3,Graham Kelly
+Crusaders FC,24,Leon Barr
+Crusaders FC,22,Ryan McKay
+Crusaders FC,22,Cammy Bruce
+Crusaders FC,28,Jonny James
+Crusaders FC,2,Kurtis Forsythe
+Crusaders FC,16,Josh Williamson
+Crusaders FC,6,Robbie Weir
+Crusaders FC,10,Finley Thorndike
+Crusaders FC,23,Oilibhéar McCart
+Crusaders FC,8,Harry Jewitt-White
+Crusaders FC,12,Jack Doherty
+Crusaders FC,64,Matthew Beattie
+Crusaders FC,7,Kieran McKechnie
+Crusaders FC,15,Owen Wardell
+Crusaders FC,42,Lloyd Anderson
+Crusaders FC,11,Elliot Dunlop
+Crusaders FC,27,Tom Maguire
+Crusaders FC,26,Ryan Donnelly
+Crusaders FC,9,Adam Brooks
+Crusaders FC,18,Aaron Reid
+Crusaders FC,21,Stewart Nixon
+Crusaders FC,17,Karter Bond
+Crusaders FC,20,Michael Mulholland
+Limavady United FC,31,Marty Gallagher
+Limavady United FC,27,Fintan Doherty
+Limavady United FC,4,Kieran Farren
+Limavady United FC,19,Rodney Brown
+Limavady United FC,24,Adam Mullan
+Limavady United FC,5,Tiarnan Boorman
+Limavady United FC,6,Jack Mullan
+Limavady United FC,3,Matty Walker
+Limavady United FC,2,Jay Riley
+Limavady United FC,8,Stephen Lowry
+Limavady United FC,7,Philip Lowry
+Limavady United FC,16,Ruairi Boorman
+Limavady United FC,11,Lewis Tosh
+Limavady United FC,14,Connor McCloskey
+Limavady United FC,23,Jake Martin
+Limavady United FC,33,Michael Harris
+Limavady United FC,17,John Butcher
+Bangor FC,1,Gareth Deane
+Bangor FC,13,Patrick Solis Grogan
+Bangor FC,27,Lawton McMahon
+Bangor FC,17,Harry Lynch
+Bangor FC,28,Stephen McGuinness
+Bangor FC,19,Lewis Francis
+Bangor FC,35,Alfie Mitchell
+Bangor FC,3,Reece Neale
+Bangor FC,29,Iestyn Hughes
+Bangor FC,2,Caomhan McGuinness
+Bangor FC,8,Tiernan Mulvenna
+Bangor FC,24,Oisin Devlin
+Bangor FC,22,Ross Ferguson
+Bangor FC,7,Liam Hassin
+Bangor FC,15,Jack O'Mahony
+Bangor FC,6,Lewis Harrison
+Bangor FC,30,Liam Burns
+Bangor FC,9,Ben Arthurs
+Bangor FC,10,Ben Cushnie
+Bangor FC,25,Mick Morgan
+Bangor FC,21,Jay Boyd
+Bangor FC,34,Blake Matier
