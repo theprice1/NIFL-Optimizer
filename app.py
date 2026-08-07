@@ -18,8 +18,8 @@ def load_data():
     engine = create_engine(db_uri)
     df = pd.read_sql("SELECT * FROM players", engine)
     
-    # Format display name for the sidebar dropdowns
-    df['display_name'] = df['name'] + ' (' + df['club'] + ')'
+    # Format display name to emphasize the club for easier scanning
+    df['display_name'] = '[' + df['position'] + '] ' + df['club'] + ' - ' + df['name']
 
     # Dynamic Projection Engine (Mimics 2025/26 Final Season Points)
     def get_default_projection(row):
@@ -77,7 +77,12 @@ if uploaded_file is not None:
         st.sidebar.error(f"Error loading CSV: {e}")
 
 st.sidebar.subheader("2. Player Preferences")
-player_options = sorted(df['display_name'].tolist())
+
+# Sort options by position (GK -> DEF -> MID -> FWD -> AM), then alphabetically by CLUB, then by NAME
+pos_order = ['GK', 'DEF', 'MID', 'FWD', 'AM']
+df['pos_cat'] = pd.Categorical(df['position'], categories=pos_order, ordered=True)
+df_sorted = df.sort_values(by=['pos_cat', 'club', 'name']).reset_index(drop=True)
+player_options = df_sorted['display_name'].tolist()
 
 forced_players = st.sidebar.multiselect("Force Include (Max 4):", options=player_options, max_selections=4)
 excluded_players = st.sidebar.multiselect("Exclude Players:", options=[p for p in player_options if p not in forced_players])
