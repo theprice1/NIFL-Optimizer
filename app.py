@@ -1,8 +1,8 @@
 import os
 import streamlit as st
 import pandas as pd
-import pulp
 from sqlalchemy import create_engine
+from optimizer import generate_lineups  # 👈 Look here! We import your engine.
 
 st.set_page_config(page_title="NIFL Fantasy Optimizer", layout="wide")
 
@@ -21,7 +21,6 @@ def load_data():
     # Format display name to emphasize the club for easier scanning
     df['display_name'] = '[' + df['position'] + '] ' + df['club'] + ' - ' + df['name']
 
-    # Dynamic Projection Engine (Mimics 2025/26 Final Season Points)
     def get_default_projection(row):
         wage = float(row['wage'])
         if row['position'] == 'AM':
@@ -30,7 +29,6 @@ def load_data():
 
     df['projected_points'] = df.apply(get_default_projection, axis=1)
 
-    # If a local custom CSV exists on disk, merge it automatically
     if os.path.exists('player_projections.csv'):
         try:
             proj_df = pd.read_csv('player_projections.csv')
@@ -78,7 +76,7 @@ if uploaded_file is not None:
 
 st.sidebar.subheader("2. Player Preferences")
 
-# Sort options by position (GK -> DEF -> MID -> FWD -> AM), then alphabetically by CLUB, then by NAME
+# Sort options by position, then alphabetically by CLUB, then by NAME
 pos_order = ['GK', 'DEF', 'MID', 'FWD', 'AM']
 df['pos_cat'] = pd.Categorical(df['position'], categories=pos_order, ordered=True)
 df_sorted = df.sort_values(by=['pos_cat', 'club', 'name']).reset_index(drop=True)
@@ -98,95 +96,30 @@ with st.expander("📊 View Master Player Database & Projections"):
     st.dataframe(df[['position', 'name', 'club', 'wage', 'projected_points']], width="stretch")
 
 # ---------------------------------------------------------
-# 3. RUN OPTIMIZER & PULP MODEL BUILDING
+# 3. RUN OPTIMIZER & DISPLAY RESULTS
 # ---------------------------------------------------------
 if st.button("🚀 Generate Optimal Squads", type="primary"):
     
     with st.spinner(f"Crunching the numbers for {num_lineups} lineups..."):
-        model = pulp.LpProblem("NIFL_Optimizer", pulp.LpMaximize)
-        player_vars = pulp.LpVariable.dicts("Player", df['id'], cat='Binary')
+        
+        # 👈 We now call the isolated backend engine!
+        generated_squads, error_msg = generate_lineups(
+            df=df, 
+            formation=selected_formation, 
+            num_lineups=num_lineups, 
+            min_diff=min_difference, 
+            forced_names=forced_players, 
+            excluded_names=excluded_players
+        )
 
-        # SPEED OPTIMIZATION: Dictionary lookups instead of Pandas .loc
-        wages = dict(zip(df['id'], df['wage']))
-        points = dict(zip(df['id'], df['projected_points']))
-        clubs = dict(zip(df['id'], df['club']))
+        # Handle UI errors passed back from the engine
+        if error_msg:
+            if not generated_squads:
+                st.error(error_msg)
+            else:
+                st.warning(error_msg)
 
-        # Objective Function
-        model += pulp.lpSum([points[i] * player_vars[i] for i in df['id']])
-
-        # Apply Force Include / Exclude Constraints
-        forced_ids = df[df['display_name'].isin(forced_players)]['id'].tolist()
-        excluded_ids = df[df['display_name'].isin(excluded_players)]['id'].tolist()
-
-        for fid in forced_ids: 
-            model += player_vars[fid] == 1 
-        for eid in excluded_ids: 
-            model += player_vars[eid] == 0 
-
-        # Roster Size & Budget Cap Constraints
-        model += pulp.lpSum([wages[i] * player_vars[i] for i in df['id']]) <= 4000
-        model += pulp.lpSum([player_vars[i] for i in df['id']]) == 12
-
-        # SUNDAY LIFE RULE: Exactly 1 player per club
-        for club in df['club'].unique():
-            model += pulp.lpSum([player_vars[i] for i in df['id'] if clubs[i] == club]) == 1
-
-        # Position Requirements
-        gk_ids = df[df['position'] == 'GK']['id'].tolist()
-        def_ids = df[df['position'] == 'DEF']['id'].tolist()
-        mid_ids = df[df['position'] == 'MID']['id'].tolist()
-        fwd_ids = df[df['position'] == 'FWD']['id'].tolist()
-        am_ids = df[df['position'] == 'AM']['id'].tolist()
-
-        model += pulp.lpSum([player_vars[i] for i in gk_ids]) == 1
-        model += pulp.lpSum([player_vars[i] for i in am_ids]) == 1
-
-        f_def, f_mid, f_fwd = map(int, selected_formation.split('-'))
-        model += pulp.lpSum([player_vars[i] for i in def_ids]) == f_def
-        model += pulp.lpSum([player_vars[i] for i in mid_ids]) == f_mid
-        model += pulp.lpSum([player_vars[i] for i in fwd_ids]) == f_fwd
-
-        # ---------------------------------------------------------
-        # 4. SOLVE LOOP FOR MULTIPLE LINEUPS
-        # ---------------------------------------------------------
-        generated_squads = []
-
-        for step in range(num_lineups):
-            model.solve(pulp.PULP_CBC_CMD(msg=False))
-            
-            if pulp.LpStatus[model.status] != 'Optimal':
-                if step == 0:
-                    st.error("🚨 Infeasible Setup! The math engine couldn't find a valid team. Try clearing forced players or picking a different formation.")
-                else:
-                    st.warning(f"Generated {step} unique lineup(s). Relax constraint sliders to discover more combinations.")
-                break
-
-            current_lineup_ids = []
-            selected_players = []
-            total_cost = 0
-            total_points = 0
-
-            for i in df['id']:
-                if player_vars[i].varValue == 1.0:
-                    current_lineup_ids.append(i)
-                    player_row = df.loc[df['id'] == i].iloc[0]
-                    selected_players.append(player_row)
-                    total_cost += player_row['wage']
-                    total_points += player_row['projected_points']
-            
-            generated_squads.append({
-                "lineup_num": step + 1,
-                "cost": total_cost,
-                "points": total_points,
-                "players": pd.DataFrame(selected_players)[['position', 'name', 'club', 'wage', 'projected_points']]
-            })
-
-            # Diversity overlap constraint
-            model += pulp.lpSum([player_vars[i] for i in current_lineup_ids]) <= (12 - min_difference)
-
-        # ---------------------------------------------------------
-        # 5. DISPLAY RESULTS
-        # ---------------------------------------------------------
+        # Display the UI results
         if generated_squads:
             st.success(f"✅ Successfully generated {len(generated_squads)} mathematically optimal lineup(s)!")
             tabs = st.tabs([f"Lineup {squad['lineup_num']}" for squad in generated_squads])
@@ -195,16 +128,14 @@ if st.button("🚀 Generate Optimal Squads", type="primary"):
                 with tab:
                     squad = generated_squads[index]
                     
-                    # Remaining Budget Math
                     st.markdown(f"**Total Cost:** £{squad['cost']:.0f}k *(Bank: £{4000 - squad['cost']:.0f}k)* | **Projected Points:** {squad['points']:.1f}")
                     
-                    # Positional Sorting (GK -> DEF -> MID -> FWD -> AM)
+                    # Positional Sorting
                     sort_order = ['GK', 'DEF', 'MID', 'FWD', 'AM']
                     squad_df = squad['players'].copy()
                     squad_df['position'] = pd.Categorical(squad_df['position'], categories=sort_order, ordered=True)
                     squad_df = squad_df.sort_values('position').reset_index(drop=True)
                     
-                    # Highlight the Star Player (Highest Points)
                     def highlight_max_points(s):
                         is_max = s == s.max()
                         return ['background-color: rgba(46, 123, 50, 0.4)' if v else '' for v in is_max]
